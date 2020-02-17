@@ -7,22 +7,29 @@ def linear_search(arr, target):
                 return arr.index(target)
     return -1 
 
-print(linear_search([-2, 7, 3, -9, 5, 1, 0, 4, -6], -2))
-
-
 # STRETCH: write an iterative implementation of Binary Search 
 def binary_search(arr, target):
 
-  if len(arr) == 0:
-    return -1 # array empty
-    
-  low = 0
-  high = len(arr)-1
+    if len(arr) == 0:
+      return -1 # array empty
+      
+    low = 0
+    high = len(arr)-1
+    found = False
 
-  # TO-DO: add missing code
+    while low <= high and not found:
+        middle = (high + low) // 2
+          
+        if arr[middle] == target:
+              found = True
+              return arr.index(target)
+        else:
+            if arr[middle] > target:
+                  high = middle - 1
+            else:
+                  low = middle + 1
 
-  return -1 # not found
-
+    return -1 # not found
 
 # STRETCH: write a recursive implementation of Binary Search 
 def binary_search_recursive(arr, target, low, high):
