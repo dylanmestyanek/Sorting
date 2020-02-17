@@ -2,8 +2,12 @@
 def linear_search(arr, target):
   
   # TO-DO: add missing code
+    for i in range(len(arr)):
+          if arr[i] == target:
+                return arr.index(target)
+    return -1 
 
-   return -1   # not found
+print(linear_search([-2, 7, 3, -9, 5, 1, 0, 4, -6], -2))
 
 
 # STRETCH: write an iterative implementation of Binary Search 
