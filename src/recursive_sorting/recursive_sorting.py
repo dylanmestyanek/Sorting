@@ -10,7 +10,7 @@ def merge( arrA, arrB ):
             merged_arr[r] = arrA[a]
             a += 1
             r += 1
-        elif (arrB[b] < arrA[a]):
+        else:
             merged_arr[r] = arrB[b]
             b += 1
             r += 1
@@ -25,7 +25,6 @@ def merge( arrA, arrB ):
         b += 1
         r += 1
 
-    print(merged_arr)
     return merged_arr
 
 
@@ -35,10 +34,9 @@ def merge_sort( arr ):
         left = merge_sort(arr[0 : len(arr) // 2])
         right = merge_sort(arr[len(arr) // 2 :])
         arr = merge(left, right)
-    
     return arr
 
-print(merge_sort([4,3,2,1,8,1,3,10]))
+print(merge_sort([4,3,2,1,8,1,3,10, 11]))
 
 
 # STRETCH: implement an in-place merge sort algorithm
